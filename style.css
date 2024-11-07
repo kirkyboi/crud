@@ -39,9 +39,11 @@ label {
     color: #555;
 }
 
+/* Input field styling for all input types */
 input[type="text"],
 input[type="email"],
-input[type="tel"] {
+input[type="tel"],
+input[type="number"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -54,7 +56,8 @@ input[type="tel"] {
 /* Focus effect on input fields */
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="tel"]:focus {
+input[type="tel"]:focus,
+input[type="number"]:focus {
     border-color: #3498db;
     outline: none;
 }
