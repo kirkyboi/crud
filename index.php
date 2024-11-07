@@ -16,9 +16,13 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Phone</th>
+                <th>First Name</th>
+                <th>Middle Name</th>
+                <th>Last Name</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Course</th>
+                <th>Section</th>
                 <th>Actions</th>
             </tr>
         </thead>
@@ -31,9 +35,13 @@
                 while($row = $result->fetch_assoc()) {
                     echo "<tr>";
                     echo "<td>" . $row["id"] . "</td>";
-                    echo "<td>" . $row["name"] . "</td>";
-                    echo "<td>" . $row["email"] . "</td>";
-                    echo "<td>" . $row["phone"] . "</td>";
+                    echo "<td>" . $row["first_name"] . "</td>";
+                    echo "<td>" . $row["middle_name"] . "</td>";
+                    echo "<td>" . $row["last_name"] . "</td>";
+                    echo "<td>" . $row["age"] . "</td>";
+                    echo "<td>" . $row["address"] . "</td>";
+                    echo "<td>" . $row["course"] . "</td>";
+                    echo "<td>" . $row["section"] . "</td>";
                     echo "<td>
                         <a href='update.php?id=" . $row["id"] . "' class='button-edit'>Edit</a> |
                         <a href='delete.php?id=" . $row["id"] . "' class='button-delete'>Delete</a>
@@ -41,7 +49,7 @@
                     echo "</tr>";
                 }
             } else {
-                echo "<tr><td colspan='5'>No users found</td></tr>";
+                echo "<tr><td colspan='9'>No users found</td></tr>";
             }
             ?>
         </tbody>
