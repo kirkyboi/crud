@@ -7,11 +7,15 @@ $result = $conn->query($sql);
 $user = $result->fetch_assoc();
 
 if (isset($_POST['submit'])) {
-    $name = $_POST['name'];
-    $email = $_POST['email'];
-    $phone = $_POST['phone'];
+    $first_name = $_POST['first_name'];
+    $middle_name = $_POST['middle_name'];
+    $last_name = $_POST['last_name'];
+    $age = $_POST['age'];
+    $address = $_POST['address'];
+    $course = $_POST['course'];
+    $section = $_POST['section'];
 
-    $sql = "UPDATE users SET name='$name', email='$email', phone='$phone' WHERE id=$id";
+    $sql = "UPDATE users SET first_name='$first_name', middle_name='$middle_name', last_name='$last_name', age=$age, address='$address', course='$course', section='$section' WHERE id=$id";
 
     if ($conn->query($sql) === TRUE) {
         echo "<p>User updated successfully</p>";
@@ -33,12 +37,20 @@ if (isset($_POST['submit'])) {
 <div class="container">
     <h2>Update User</h2>
     <form action="" method="POST">
-        <label>Name</label>
-        <input type="text" name="name" value="<?php echo $user['name']; ?>" required>
-        <label>Email</label>
-        <input type="email" name="email" value="<?php echo $user['email']; ?>" required>
-        <label>Phone</label>
-        <input type="tel" name="phone" value="<?php echo $user['phone']; ?>" required>
+        <label>First Name</label>
+        <input type="text" name="first_name" value="<?php echo $user['first_name']; ?>" required>
+        <label>Middle Name</label>
+        <input type="text" name="middle_name" value="<?php echo $user['middle_name']; ?>" required>
+        <label>Last Name</label>
+        <input type="text" name="last_name" value="<?php echo $user['last_name']; ?>" required>
+        <label>Age</label>
+        <input type="number" name="age" value="<?php echo $user['age']; ?>" required>
+        <label>Address</label>
+        <input type="text" name="address" value="<?php echo $user['address']; ?>" required>
+        <label>Course</label>
+        <input type="text" name="course" value="<?php echo $user['course']; ?>" required>
+        <label>Section</label>
+        <input type="text" name="section" value="<?php echo $user['section']; ?>" required>
         <button type="submit" name="submit">Update</button>
     </form>
     <a href="index.php">Back to List</a>
